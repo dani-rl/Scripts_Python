@@ -12,6 +12,10 @@ def obtenerTabla(table_name):
     Esta funcion nos permite crear la conexion con nuestra BBDD
     y seleccionar una tabla. Esta tabla se devuelve como dataframe.
 
+    El controlador instalado debe ser Connector/ODBC x64. La instalacion
+    se puede hacer desde MySQL Installer
+
+
     Parametros
     ----------
     table_name : string
