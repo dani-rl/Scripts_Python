@@ -47,7 +47,28 @@ def obtenerTabla(table_name):
     
     
 def insertaDatos(df, table_name):
-    
+        
+    """
+    Esta funcion nos permite insertar datos en una base de datos existente
+    en nuestro servidor de Mysql
+
+    El controlador instalado debe ser Connector/ODBC x64. La instalacion
+    se puede hacer desde MySQL Installer
+
+
+    Parametros
+    ----------
+    df: DataFrame
+        Dataframe con el conjunto de datos que se quiere insertar
+    table_name : string
+        Nombre de la tabla en SQL que queremos seleccionar
+
+    Return
+    ------
+    No devuleve ningun valor
+
+    """
+
     connection_string = (
         'DRIVER = MySQL ODBC 8.0 ANSI Driver;'
         'SERVER = ip_servidor;'
