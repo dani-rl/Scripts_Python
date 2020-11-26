@@ -62,5 +62,4 @@ def insertaDatos(df, table_name):
     for index, row in df.iterrows():
         cur.execute("INSERT INTO"+ table_name "+(campo1,campo2,campo3...) values(?,?,?...)", row.campo1,row.campo2, row.campo3,...)
 
-    conn.commit()
-    cur.close()
+    conn.close()
