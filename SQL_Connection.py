@@ -28,7 +28,7 @@ def obtenerTabla(table_name):
 
     """
 
-    connection_string(
+    connection_string = (
         'DRIVER = MySQL ODBC 8.0 ANSI Driver;'
         'SERVER = ip_servidor;'
         'DATABASE = database_name;'
@@ -44,3 +44,23 @@ def obtenerTabla(table_name):
     print(sql_query)
 
     conn.close()
+    
+    
+def insertaDatos(df, table_name):
+    
+    connection_string = (
+        'DRIVER = MySQL ODBC 8.0 ANSI Driver;'
+        'SERVER = ip_servidor;'
+        'DATABASE = database_name;'
+        'UID = user_name;'
+        'PWD = password;'
+        'CHARSET = deafult_charset;'
+    )
+    conn = pyodbc.connect(connection_string)
+    cur = conn.cursor()
+    #Insertar datos de DataFrame en MySQL:
+    for index, row in df.iterrows():
+        cur.execute("INSERT INTO"+ table_name "+(campo1,campo2,campo3...) values(?,?,?...)", row.campo1,row.campo2, row.campo3,...)
+
+    conn.commit()
+    cur.close()
