@@ -158,12 +158,12 @@ def main():
 
 
     # Datos Conexion #
-    driver = 'MySQL ODBC 8.0 Unicode Driver'
-    ip_servidor = 'bbdd.braintrust-cs.org'
-    database_name = 'btcs'
-    user_name = 'btcs'
-    password = 'SERVERtrust1.0+-'
-    charset = 'latin1'
+    driver = ''
+    ip_servidor = ''
+    database_name = ''
+    user_name = ''
+    password = ''
+    charset = ''
 
     # Crea conexion #
     conn = funcionesSQL.creaConexion(driver, ip_servidor,
@@ -172,35 +172,7 @@ def main():
     funcionesSQL.mostrarTabla(conn,'V_Parque_DGT')
     # Insertar datos en tabla #
 
-    # ----- EN PRRUEBAS ----- #
-    """
-    path = 'C:/Users/drlopez/Desktop/Braintrust/Mutua/AUTO/Trabajando/Prueba.csv'
-
-    df = pd.read_csv(path,sep=';')
-
-
-
-    try:
-
-        funcionesSQL.insertaDatos(conn
-             ,df
-             ,'Parque_DGT_copy')
-
-    except:
-        print("Ha ocurrido un error")
-    finally:
-        conn.close()
-
-    """
-
-    # Ejecuta consulta de seleccion #
-    # try:
-    #     funcionesSQL.mostrarTabla(conn, 'V_Parque_DGT')
-    # except:
-    #     print("Ha ocurrido un error")
-    # finally:
-    #     conn.close()
-
+  
 
 if __name__ == "__main__":
     main()
